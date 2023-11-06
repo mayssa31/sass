@@ -1,0 +1,26 @@
+$color: red;
+$fontsize: 20px;
+//question 1
+text,
+textarea,
+h1 {
+    color: $color;
+    font-size: $fontsize;
+}
+
+ @function background($background-color){
+    @if $background-color != white{
+        @return white;
+    }
+ }
+  $langages:('HTML5', 'CSS3', 'JAVA', 'React');
+  
+@function firstLastEntry($list) {
+    $first: nth($list, 1);
+    $last: nth($list, length($list));
+    @return $first, $last;
+  }
+$content:firstLastEntry($langages);
+  .content {
+    content: $content; 
+  }
